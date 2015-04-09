@@ -25,6 +25,7 @@
             </td>
             <td class="auto-style1">
                 <asp:TextBox ID="NombresTextBox" runat="server" BackColor="White" Width="172px" MaxLength="30"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="NombresTextBox" ErrorMessage="*" ForeColor="Red">Debe de ingresar el nombre.</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>

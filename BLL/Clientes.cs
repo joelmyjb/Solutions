@@ -79,7 +79,7 @@ namespace BLL
         {
 
             Conexion conexiondb = new Conexion();
-            return conexiondb.BuscarDb("Select " + Campos + "From Clientes where " + Filtro);
+            return conexiondb.BuscarDb("Select " + Campos + " from Clientes where " + Filtro);
 
         }
 

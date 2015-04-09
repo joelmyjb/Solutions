@@ -1,9 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProyectoFinal.Master" AutoEventWireup="true" CodeBehind="RegistroEntregas.aspx.cs" Inherits="ProyectoFinalAII.Registros.RegistroEntregas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
-        .auto-style1 {
-            width: 248px;
-        }
         .auto-style2 {
             width: 247px;
         }
@@ -15,6 +12,9 @@
     .auto-style5 {
         width: 126px;
     }
+        .auto-style6 {
+            width: 278px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -26,7 +26,7 @@
             <td class="auto-style5">
                 <asp:Label ID="IdLabel" runat="server" Text="IdEntrega"></asp:Label>
             </td>
-            <td class="auto-style1">
+            <td class="auto-style6">
                 <asp:TextBox ID="IdEntregaTextBox" runat="server" BackColor="White" Width="56px"></asp:TextBox>
             </td>
         </tr>
@@ -34,7 +34,7 @@
             <td class="auto-style5">
                 <asp:Label ID="Fechalabel" runat="server" Text="Fecha"></asp:Label>
             </td>
-            <td class="auto-style1">
+            <td class="auto-style6">
                 <asp:TextBox ID="FechaTextBox" runat="server" BackColor="White" Width="123px" TextMode="Date"></asp:TextBox>
             &nbsp;</td>
         </tr>
@@ -42,7 +42,7 @@
             <td class="auto-style5">
                 <asp:Label ID="IdRecepcionLabel" runat="server" Text="IdRecepcion"></asp:Label>
             </td>
-            <td class="auto-style1">
+            <td class="auto-style6">
                 <asp:DropDownList ID="IdRecepcionDropDownList" runat="server" Width="158px">
                 </asp:DropDownList>
             &nbsp;</td>
@@ -51,7 +51,7 @@
             <td class="auto-style5">
                 <asp:Label ID="IdUsuarioLabel" runat="server" Text="IdUsuario"></asp:Label>
             </td>
-            <td class="auto-style1">
+            <td class="auto-style6">
                 <asp:DropDownList ID="IdUsuarioDropDownList" runat="server" Width="158px">
                 </asp:DropDownList>
             </td>
@@ -60,7 +60,7 @@
             <td class="auto-style5">
                 <asp:Label ID="ObservacionesLabel" runat="server" Text="Observaciones"></asp:Label>
             </td>
-            <td class="auto-style1">
+            <td class="auto-style6">
                 <asp:TextBox ID="ObservacionesTextBox" runat="server" BackColor="White" Width="363px" MaxLength="50"></asp:TextBox>
             </td>
         </tr>
@@ -68,15 +68,16 @@
             <td class="auto-style5">
                 <asp:Label ID="Montolabel" runat="server" Text="Monto"></asp:Label>
             </td>
-            <td class="auto-style1">
+            <td class="auto-style6">
                 <asp:TextBox ID="MontoTextBox" runat="server" BackColor="White" Width="63px"></asp:TextBox>
-            &nbsp;</td>
+            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="MontoTextBox" ErrorMessage="*" ForeColor="Red">Debe de ingresar el monto.</asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td class="auto-style5">
                 <asp:Label ID="Descuentolabel" runat="server" Text="Descuento"></asp:Label>
             </td>
-            <td class="auto-style1">
+            <td class="auto-style6">
                 <asp:TextBox ID="DescuentoTextBox" runat="server" BackColor="White" Width="61px"></asp:TextBox>
             </td>
         </tr>
