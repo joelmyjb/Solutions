@@ -15,6 +15,7 @@ namespace ProyectoFinalAII.Registros
         Diagnosticos diagnosticos = new Diagnosticos();
         Estados estados = new Estados();
         Usuarios usuarios = new Usuarios();
+        Recepciones recepciones = new Recepciones();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -43,12 +44,33 @@ namespace ProyectoFinalAII.Registros
             this.IdUsuarioDropDownList.DataTextField = "Nombre";
             this.IdUsuarioDropDownList.DataBind();
 
+            if (!IsPostBack)
+            {
+                if (Request.QueryString["IdRecepciones"] != null)
+                {
+                    EliminarButton.Visible = true;
+                    recepciones.IdRecepciones= int.Parse(Request.QueryString["IdRecepciones"]);
+                    if (recepciones.Buscar())
+                    {
+                        IdRecepcionTextBox.Text = recepciones.IdRecepciones.ToString();
+                        FechaTextBox.Text = recepciones.Fecha.ToString();
+                        IdClienteDropDownList.Text = recepciones.IdCliente.ToString();
+                        IdEquipoDropDownList.Text = recepciones.IdEquipo.ToString();
+                        IdDiagnosticoDropDownList.Text = recepciones.IdDiagnostico.ToString();
+                        IdEstadoDropDownList.Text = recepciones.IdEstado.ToString();
+                        IdUsuarioDropDownList.Text = recepciones.IdUsuario.ToString();
+                        SerialTextBox.Text = recepciones.Serial;
+                        ObservacionesTextBox.Text = recepciones.Observaciones;
+                    }
 
+                }
+
+            }
         }
 
         public void LLenarClase(Recepciones recepciones)
         {
-            recepciones.Fecha = Convert.ToDateTime(FechaTextBox.Text);
+            recepciones.Fecha = DateTime.Now;
             recepciones.IdCliente = Convert.ToInt32(IdClienteDropDownList.Text);
             recepciones.IdEquipo = Convert.ToInt32(IdEquipoDropDownList.Text);
             recepciones.IdDiagnostico = Convert.ToInt32(IdDiagnosticoDropDownList.Text);
@@ -63,7 +85,7 @@ namespace ProyectoFinalAII.Registros
         private void LlenarCampos(Recepciones recepciones)
         {
             IdRecepcionTextBox.Text = recepciones.IdRecepciones.ToString();
-            FechaTextBox.Text = recepciones.Fecha.ToString("yyyy/MM/dd");
+            
             IdClienteDropDownList.Text = recepciones.IdCliente.ToString();
             IdUsuarioDropDownList.Text = recepciones.IdUsuario.ToString();
             IdEquipoDropDownList.Text = recepciones.IdEquipo.ToString();
@@ -99,6 +121,14 @@ namespace ProyectoFinalAII.Registros
         {
             Recepciones recepciones = new Recepciones();
             this.LLenarClase(recepciones);
+
+            if (Request.QueryString["IdRecepciones"] != null)
+            {
+                recepciones.IdRecepciones = int.Parse(Request.QueryString["IdRecepciones"]);
+                recepciones.Modificar();
+                MensajeLabel.Text = "La recepcion se ha Modificado Correctamente";
+            }
+            else
             if(recepciones.Insertar())
             {
                 MensajeLabel.ForeColor = System.Drawing.Color.Green;

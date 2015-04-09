@@ -21,6 +21,7 @@ namespace ProyectoFinalAII.Registros
                     estados.IdEstado = int.Parse(Request.QueryString["IdEstado"]);
                     if (estados.Buscar())
                     {
+                        IdEstadoTextBox.Text = estados.IdEstado.ToString();
                         DescripcionTextBox.Text = estados.Descripcion;
 
 
@@ -39,12 +40,8 @@ namespace ProyectoFinalAII.Registros
             if (Request.QueryString["IdEstado"] != null)
             {
                 estados.IdEstado = int.Parse(Request.QueryString["IdEstado"]);
-                if (estados.Modificar())
-                {
-                    Response.Write("Se ha modificado!!");
-                    LimpiarCampos();
-                }
-
+                estados.Modificar();
+                MensajeLabel.Text = "El estado se ha Modificado Correctamente";
             }
             else
             if(estados.Insertar())

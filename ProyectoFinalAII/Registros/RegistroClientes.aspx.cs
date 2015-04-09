@@ -21,6 +21,7 @@ namespace ProyectoFinalAII.Registros
                     cliente.IdCliente = int.Parse(Request.QueryString["IdCliente"]);
                     if (cliente.Buscar())
                     {
+                        IdClienteTextBox.Text = cliente.IdCliente.ToString();
                         NombresTextBox.Text = cliente.Nombres;
                         DireccionTextBox.Text = cliente.Direccion;      
                         CelularTextBox.Text = cliente.Celular;
@@ -86,24 +87,20 @@ namespace ProyectoFinalAII.Registros
         {
             Clientes clientes = new Clientes();
             this.LLenarClase(clientes);
-            
+
 
             if (Request.QueryString["IdCliente"] != null)
             {
                 clientes.IdCliente = int.Parse(Request.QueryString["IdCliente"]);
-                if (clientes.Modificar())
-                {
-                    Response.Write("Se ha modificado!!");
-                    LimpiarCampos();
-                }
-
+                clientes.Modificar();
+                MensajeLabel.Text = "El articulo se ha Modificado Correctamente";
             }
             else
 
                 if (clientes.Insertar())
                 {
                     MensajeLabel.ForeColor = System.Drawing.Color.Green;
-                    MensajeLabel.Text = "Cliente guardado con exito.";
+                    MensajeLabel.Text = "Cliente guardado con exito....";
                     LimpiarCampos();
                   
                 }

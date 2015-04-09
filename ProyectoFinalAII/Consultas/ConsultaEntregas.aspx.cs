@@ -22,14 +22,14 @@ namespace ProyectoFinalAII.Consultas
         }
 
         Entregas entregas = new Entregas();
-        string Filtro = "1=1";
-        string Campos = "IdEntrega, Fecha, Monto";
+        string Filtro = " 1=1 ";
+        string Campos = " IdEntrega, Fecha, Monto";
 
         protected void BuscarButton_Click1(object sender, EventArgs e)
         {
             if (BuscarDropDownList.SelectedIndex == 0)
             {
-                Filtro += "and IdEntrega like '%" + BuscarText.Text + "'";
+                Filtro += " and IdEntrega like '%" + BuscarText.Text + "'";
 
             }
            

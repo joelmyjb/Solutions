@@ -21,6 +21,7 @@ namespace ProyectoFinalAII.Registros
                     tiposequipos.IdEquipo = int.Parse(Request.QueryString["IdEquipo"]);
                     if (tiposequipos.Buscar())
                     {
+                        IdEquipoTextBox.Text = tiposequipos.IdEquipo.ToString();
                         DescripcionTextBox.Text = tiposequipos.Descripcion;
 
 
@@ -72,12 +73,8 @@ namespace ProyectoFinalAII.Registros
             if (Request.QueryString["IdEquipo"] != null)
             {
                 tiposequipos.IdEquipo = int.Parse(Request.QueryString["IdEquipo"]);
-                if (tiposequipos.Modificar())
-                {
-                    Response.Write("Se ha modificado!!");
-                    LimpiarCampos();
-                }
-
+                tiposequipos.Modificar();
+                MensajeLabel.Text = " Modificado Correctamente";
             }
             else 
             if(tiposequipos.Insertar())

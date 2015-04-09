@@ -33,7 +33,7 @@ namespace BLL
         public bool Modificar()
         {
             Conexion conexiondb = new Conexion();
-            return conexiondb.EjecutarDB("Update from TiposEquipos set Descripcion = '" + Descripcion + "' where TiposEquipos = " + IdEquipo);
+            return conexiondb.EjecutarDB("Update TiposEquipos set Descripcion = '" + Descripcion + "' where IdEquipo = " + IdEquipo);
         }
 
         public bool Eliminar(int IdEquipo)

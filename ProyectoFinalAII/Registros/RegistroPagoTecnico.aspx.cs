@@ -13,6 +13,7 @@ namespace ProyectoFinalAII.Registros
 
         Tecnicos tecnicos = new Tecnicos();
         Usuarios usuarios = new Usuarios();
+        PagoTecnico pagotecnico = new PagoTecnico();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,6 +26,28 @@ namespace ProyectoFinalAII.Registros
             this.IdUsuarioDropDownList.DataValueField = "IdUsuario";
             this.IdUsuarioDropDownList.DataTextField = "Nombre";
             this.IdUsuarioDropDownList.DataBind();
+
+            if (!IsPostBack)
+            {
+                if (Request.QueryString["IdPagoTecnico"] != null)
+                {
+                    EliminarButton.Visible = true;
+                    pagotecnico.IdPagoTecnico = int.Parse(Request.QueryString["IdPagoTecnico"]);
+                    if (pagotecnico.Buscar())
+                    {
+                        IdPagoTecnicoTextBox.Text = pagotecnico.IdPagoTecnico.ToString();
+                       
+                        IdTecnicoDropDownList.Text = pagotecnico.IdTecnico.ToString();
+                        IdUsuarioDropDownList.Text = pagotecnico.IdUsuario.ToString();
+                        
+                        MontoTextBox.Text = pagotecnico.Monto.ToString();
+
+
+                    }
+
+                }
+
+            }
         }
 
         public void LLenarClase(PagoTecnico pagotecnico)
@@ -45,7 +68,7 @@ namespace ProyectoFinalAII.Registros
             IdTecnicoDropDownList.Text = pagotecnico.IdTecnico.ToString();
             IdUsuarioDropDownList.Text = pagotecnico.IdUsuario.ToString();
             MontoTextBox.Text = pagotecnico.Monto.ToString();
-            FechaTextBox.Text = pagotecnico.Fecha.ToString("yyyy/MM/dd");
+            FechaCorteTextBox.Text = pagotecnico.FechaCorte.ToString("yyyy/MM/dd");
 
         }
 
@@ -74,6 +97,14 @@ namespace ProyectoFinalAII.Registros
         {
             PagoTecnico pagotecnico = new PagoTecnico();
             this.LLenarClase(pagotecnico);
+
+            if (Request.QueryString["IdPagoTecnico"] != null)
+            {
+                pagotecnico.IdPagoTecnico = int.Parse(Request.QueryString["IdPagoTecnico"]);
+                pagotecnico.Modificar();
+                MensajeLabel.Text = "El pago se ha Modificado Correctamente";
+            }
+            else
             if(pagotecnico.Insertar())
             {
                 MensajeLabel.ForeColor = System.Drawing.Color.Green;

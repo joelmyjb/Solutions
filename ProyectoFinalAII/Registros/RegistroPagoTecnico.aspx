@@ -36,7 +36,6 @@
             </td>
             <td class="auto-style1">
                 <asp:TextBox ID="FechaTextBox" runat="server" BackColor="White" Width="152px" TextMode="Date"></asp:TextBox>
-                <asp:RangeValidator ID="RangeValidator" runat="server" ControlToValidate="FechaTextBox" ErrorMessage="RangeValidator" ForeColor="Red">Debe ingresar la fecha.</asp:RangeValidator>
             </td>
         </tr>
         <tr>
@@ -82,7 +81,7 @@
         <tr>
             <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="NuevoButton" runat="server" OnClick="NuevoButton_Click" Text="Nuevo" Width="86px" />
 &nbsp;&nbsp;
-                <asp:Button ID="GuardarButton" runat="server" ForeColor="Black" OnClick="SaveButton_Click" Text="Guardar" Width="88px" />
+                <asp:Button ID="GuardarButton" runat="server" ForeColor="Black" OnClick="SaveButton_Click" Text="Guardar" Width="88px" style="height: 26px" />
                 &nbsp;
                 <asp:Button ID="EliminarButton" runat="server" ForeColor="Black" OnClick="DeleteButton_Click" Text="Eliminar" Width="97px" />
             </td>

@@ -21,14 +21,14 @@ namespace ProyectoFinalAII.Consultas
                 ConsultaGridView.DataBind();
             }
         }
-        string Filtro = "1=1";
-        string Campos = "IdEstado,Descripcion ";
+        string Filtro = " 1=1 ";
+        string Campos = " IdEstado, Descripcion ";
 
         protected void BuscarButton_Click1(object sender, EventArgs e)
         {
             if (BuscarDropDownList.SelectedIndex == 0)
             {
-                Filtro += "and Descripcion like '%" + BuscarText.Text + "'";
+                Filtro += "and IdEstado like '%" + BuscarText.Text + "'";
 
             }
 

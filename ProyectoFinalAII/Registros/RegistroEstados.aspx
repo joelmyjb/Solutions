@@ -27,8 +27,7 @@
             </td>
             <td>
                 <asp:TextBox ID="DescripcionTextBox" runat="server" MaxLength="50"></asp:TextBox>
-            &nbsp;<asp:RequiredFieldValidator ID="DescripcionValidator" runat="server" ControlToValidate="DescripcionTextBox" ErrorMessage="*" ForeColor="Red">Debe de ingresar la descripcion.</asp:RequiredFieldValidator>
-            </td>
+            &nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>

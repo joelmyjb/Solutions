@@ -30,11 +30,7 @@ namespace ProyectoFinalAII.Consultas
                 Filtro += "and IdTrabajoRecepciones like '%" + BuscarText.Text + "'";
 
             }
-            else
-                if (BuscarDropDownList.SelectedIndex == 1)
-                {
-                    Filtro += " and IdTecnico like '%" + BuscarText.Text + "%'";
-                }
+           
 
 
             ConsultaGridView.DataSource = trabajoRecepciones.Lista(Campos, Filtro);

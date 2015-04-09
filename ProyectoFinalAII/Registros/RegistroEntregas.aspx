@@ -36,7 +36,8 @@
             </td>
             <td class="auto-style6">
                 <asp:TextBox ID="FechaTextBox" runat="server" BackColor="White" Width="123px" TextMode="Date"></asp:TextBox>
-            &nbsp;</td>
+            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="FechaTextBox" ErrorMessage="*" ForeColor="Red">Digite la fecha.</asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td class="auto-style5">
@@ -70,8 +71,7 @@
             </td>
             <td class="auto-style6">
                 <asp:TextBox ID="MontoTextBox" runat="server" BackColor="White" Width="63px"></asp:TextBox>
-            &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="MontoTextBox" ErrorMessage="*" ForeColor="Red">Debe de ingresar el monto.</asp:RequiredFieldValidator>
-            </td>
+            &nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style5">

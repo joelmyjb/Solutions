@@ -48,7 +48,6 @@
             </td>
             <td>
                 <asp:TextBox ID="ConfirmarClaveTextBox" runat="server" MaxLength="20"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="ConfirmarValidator" runat="server" ControlToValidate="ConfirmarClaveTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red">Debe de confirmar la clave.</asp:RequiredFieldValidator>
             </td>
             <td>&nbsp;</td>
         </tr>

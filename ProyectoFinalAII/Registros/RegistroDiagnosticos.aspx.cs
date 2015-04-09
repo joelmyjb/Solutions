@@ -13,7 +13,7 @@ namespace ProyectoFinalAII.Registros
         Diagnosticos diagnosticos = new Diagnosticos();
         protected void Page_Load(object sender, EventArgs e)
         {
-             if (!IsPostBack)
+            if (!IsPostBack)
             {
                 if (Request.QueryString["IdDiagnostico"] != null)
                 {
@@ -21,15 +21,15 @@ namespace ProyectoFinalAII.Registros
                     diagnosticos.IdDiagnostico = int.Parse(Request.QueryString["IdDiagnostico"]);
                     if (diagnosticos.Buscar())
                     {
+                        IdDiagnosticoTextBox.Text = diagnosticos.IdDiagnostico.ToString();
                         DescripcionTextBox.Text = diagnosticos.Descripcion;
-                   
-                        
+                      
 
                     }
 
                 }
 
-        }
+            }
         }
             
 
@@ -74,12 +74,8 @@ namespace ProyectoFinalAII.Registros
             if (Request.QueryString["IdDiagnostico"] != null)
             {
                 diagnosticos.IdDiagnostico = int.Parse(Request.QueryString["IdDiagnostico"]);
-                if (diagnosticos.Modificar())
-                {
-                    Response.Write("Se ha modificado!!");
-                    LimpiarCampos();
-                }
-
+                diagnosticos.Modificar();
+                MensajeLabel.Text = "El diagnostico se ha Modificado Correctamente";
             }
             else 
             if (diagnosticos.Insertar())

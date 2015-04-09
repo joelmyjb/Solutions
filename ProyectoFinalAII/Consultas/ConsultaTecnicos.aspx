@@ -6,8 +6,8 @@
         <tr>
             <td>
                 &nbsp;<asp:DropDownList ID="BuscarDropDownList" runat="server" Width="131px">
+                    <asp:ListItem>IdTecnicos</asp:ListItem>
                     <asp:ListItem>Nombres</asp:ListItem>
-                    <asp:ListItem>Direccion</asp:ListItem>
                 </asp:DropDownList>
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:TextBox ID="BuscarText" runat="server" Width="225px"></asp:TextBox>

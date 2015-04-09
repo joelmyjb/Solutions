@@ -74,7 +74,7 @@ License: Creative Commons Attribution
                         <li><a href="ConsultaDiagnosticos.aspx">Consulta Diagnosticos</a></li>
                         <li><a href="ConsultaEntregas.aspx">Consulta Entregas</a></li>
                         <li><a href="ConsultaEstados.aspx">Consulta Estados</a></li>
-                        <li><a href="ConsultaPagoTecnico">Consulta Pagos Tecnicos</a></li>
+                        <li><a href="ConsultaPagoTecnico.aspx">Consulta Pagos Tecnicos</a></li>
                         <li><a href="ConsultaRecepciones.aspx">Consulta Recepciones</a></li>
                         <li><a href="ConsultaSuplidor.aspx">Consulta Suplidor</a></li>
                         <li><a href="ConsultaTecnicos.aspx">Consulta Tecnicos</a></li>

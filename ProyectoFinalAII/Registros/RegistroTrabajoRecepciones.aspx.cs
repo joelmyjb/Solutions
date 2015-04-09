@@ -14,6 +14,7 @@ namespace ProyectoFinalAII.Registros
         Recepciones recepciones = new Recepciones();
         Articulos articulos = new Articulos();
         Tecnicos tecnicos = new Tecnicos();
+        TrabajoRecepciones trabajorecepciones = new TrabajoRecepciones();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,7 +39,28 @@ namespace ProyectoFinalAII.Registros
             this.UsuarioDropDownList.DataTextField = "Nombre";
             this.UsuarioDropDownList.DataBind();
 
-            
+            if (!IsPostBack)
+            {
+                if (Request.QueryString["IdTrabajoRecepciones"] != null)
+                {
+                    EliminarButton.Visible = true;
+                    trabajorecepciones.IdTrabajoRecepciones = int.Parse(Request.QueryString["IdTrabajoRecepciones"]);
+                    if (trabajorecepciones.Buscar())
+                    {
+                        IdRecepcionTextBox.Text = trabajorecepciones.IdTrabajoRecepciones.ToString();
+                        IdRecepcionDropDownList.Text = trabajorecepciones.IdRecepcion.ToString();
+                        IdTecnicoDropDownList.Text = trabajorecepciones.IdTecnico.ToString();
+                        IdArticuloDropDownList.Text = trabajorecepciones.IdArticulo.ToString();
+                        UsuarioDropDownList.Text = trabajorecepciones.IdUsuario.ToString();
+                        PrecioTextBox.Text = trabajorecepciones.Precio.ToString();
+                        CostoTextBox.Text = trabajorecepciones.Costo.ToString();
+                     
+
+                    }
+
+                }
+
+            }
         }
 
         public void LLenarClase(TrabajoRecepciones tr)
@@ -91,6 +113,14 @@ namespace ProyectoFinalAII.Registros
         {
             TrabajoRecepciones trabajorecepciones = new TrabajoRecepciones();
             this.LLenarClase(trabajorecepciones);
+
+            if (Request.QueryString["IdTrabajoRecepciones"] != null)
+            {
+                trabajorecepciones.IdTrabajoRecepciones = int.Parse(Request.QueryString["IdTrabajoRecepciones"]);
+                trabajorecepciones.Modificar();
+                MensajeLabel.Text = " Modificado Correctamente";
+            }
+            else
            if( trabajorecepciones.Insertar())
            {
 

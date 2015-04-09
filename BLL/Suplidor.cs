@@ -35,9 +35,8 @@ namespace BLL
         public bool Modificar()
         {
             Conexion conexiondb = new Conexion();
-            return conexiondb.EjecutarDB("Update from Suplidor set Nombres = '" + Nombres + "' where Suplidor= '" + IdSuplidor);
+            return conexiondb.EjecutarDB("Update Suplidor set Nombres = '" + Nombres + "' where IdSuplidor= " + IdSuplidor);
         }
-
         public bool Eliminar(int IdSuplidor)
         {
             Conexion conexiondb = new Conexion();
@@ -53,7 +52,7 @@ namespace BLL
             if (dt.Rows.Count > 0)
             {
                 mensaje = true;
-                this.IdSuplidor = (int)dt.Rows[0]["IdSuplidor"];
+                //this.IdSuplidor = (int)dt.Rows[0]["IdSuplidor"];
                 this.Nombres = (string)dt.Rows[0]["Nombres"];
 
             }

@@ -15,27 +15,7 @@ namespace ProyectoFinalAII.Registros
         Entregas entregas = new Entregas();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!IsPostBack)
-            //{
-            //    if (Request.QueryString["IdEntrega"] != null)
-            //    {
-            //        EliminarButton.Visible = true;
-            //        entregas.IdEntrega = int.Parse(Request.QueryString["IdEntrega"]);
-            //        if (entregas.Buscar())
-            //        {
-            //            //FechaTextBox.Text = entregas.Fecha;
-            //            IdRecepcionDropDownList.Text = entregas.IdRecepcion.ToString();
-            //            IdUsuarioDropDownList.Text = entregas.IdUsuario.ToString();
-            //            ObservacionesTextBox.Text = entregas.Observaciones;
-            //            MontoTextBox.Text = entregas.Monto.ToString();
-            //            DescuentoTextBox.Text = entregas.Descuento.ToString();
-
-
-            //        }
-
-            //    }
-            //}
-
+           
             this.IdUsuarioDropDownList.DataSource = usuarios.Lista("IdUsuario,Nombre", "1=1");
             this.IdUsuarioDropDownList.DataValueField = "IdUsuario";
             this.IdUsuarioDropDownList.DataTextField = "Nombre";
@@ -45,6 +25,28 @@ namespace ProyectoFinalAII.Registros
             this.IdRecepcionDropDownList.DataValueField = "IdRecepciones";
             this.IdRecepcionDropDownList.DataTextField = "IdRecepciones";
             this.IdRecepcionDropDownList.DataBind();
+
+            if (!IsPostBack)
+            {
+                if (Request.QueryString["IdEntrega"] != null)
+                {
+                    EliminarButton.Visible = true;
+                    entregas.IdEntrega = int.Parse(Request.QueryString["IdEntrega"]);
+                    if (entregas.Buscar())
+                    {
+
+                        IdRecepcionDropDownList.Text = entregas.IdRecepcion.ToString();
+                        IdUsuarioDropDownList.Text = entregas.IdUsuario.ToString();
+                        ObservacionesTextBox.Text = entregas.Observaciones;
+                        MontoTextBox.Text = entregas.Monto.ToString();
+                        DescuentoTextBox.Text = entregas.Descuento.ToString();
+
+
+                    }
+
+                }
+            }
+
 
            
         }
@@ -85,14 +87,16 @@ namespace ProyectoFinalAII.Registros
         protected void DeleteButton_Click(object sender, EventArgs e)
         {
             Entregas entregas = new Entregas();
-         
+
             if (entregas.Eliminar(Convert.ToInt32(IdEntregaTextBox.Text.Trim())))
             {
                 MensajeLabel.ForeColor = System.Drawing.Color.Green;
-                MensajeLabel.Text = "Se elimino la entrega.";
+                MensajeLabel.Text = "La entrega se elimino..";
                 LimpiarCampos();
+
             }
-            
+
+            LimpiarCampos();
         }
 
         protected void SaveButton_Click(object sender, EventArgs e)
@@ -103,12 +107,8 @@ namespace ProyectoFinalAII.Registros
             if (Request.QueryString["IdEntrega"] != null)
             {
                 entregas.IdEntrega = int.Parse(Request.QueryString["IdEntrega"]);
-                if (entregas.Modificar())
-                {
-                    Response.Write("Se ha modificado!!");
-                    LimpiarCampos();
-                }
-
+                entregas.Modificar();
+                MensajeLabel.Text = "La entrega se ha Modificado Correctamente";
             }
             else
 

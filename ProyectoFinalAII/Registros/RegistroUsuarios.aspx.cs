@@ -12,7 +12,27 @@ namespace ProyectoFinalAII.Registros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Usuarios usuarios = new Usuarios();
+            if (!IsPostBack)
+            {
+                if (Request.QueryString["IdUsuario"] != null)
+                {
+                    EliminarButton.Visible = true;
+                    usuarios.IdUsuario = int.Parse(Request.QueryString["IdUsuario"]);
+                    if (usuarios.Buscar())
+                    {
+                        IdUsuarioTextBox.Text = usuarios.IdUsuario.ToString();
+                        NombreTextBox.Text = usuarios.Nombre;
+                        ClaveTextBox.Text = usuarios.Clave;
+                        ConfirmarClaveTextBox.Text = usuarios.ConfirmarClave;
+                        
 
+
+                    }
+
+                }
+
+            }
         }
 
         public void LLenarClase(Usuarios usuarios)
@@ -59,6 +79,15 @@ namespace ProyectoFinalAII.Registros
         {
             Usuarios usuarios = new Usuarios();
             this.LLenarClase(usuarios);
+
+
+            if (Request.QueryString["IdUsuario"] != null)
+            {
+                usuarios.IdUsuario = int.Parse(Request.QueryString["IdUsuario"]);
+                usuarios.Modificar();
+                MensajeLabel.Text = " Modificado Correctamente";
+            }
+            else
             if (usuarios.Insertar())
             {
                 MensajeLabel.ForeColor = System.Drawing.Color.Green;
@@ -81,7 +110,7 @@ namespace ProyectoFinalAII.Registros
             bool mensaje = false;
             int Numero;
             int.TryParse(IdUsuarioTextBox.Text, out Numero);
-            mensaje = Buscar.Buscar(Numero);
+            mensaje = Buscar.Buscar();
             if (mensaje == true)
             {
 

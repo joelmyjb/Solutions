@@ -56,12 +56,14 @@ namespace BLL
 
         public bool Eliminar(int IdRecepciones)
         {
-            return conexiondb.EjecuctarDB("Delete from Recepciones where IdRecepciones =" + IdRecepciones);
+            Conexion conexiondb = new Conexion();
+            return conexiondb.EjecutarDB("Delete From Recepciones Where IdRecepciones = " + IdRecepciones);
         }
 
         public bool Modificar()
         {
-            return conexiondb.EjecuctarDB("Update Recepciones set Fecha = " + Fecha.ToString("MM/dd/yyyy") + "', IdCliente ='" + IdCliente + "', IdArticulo ='" + IdEquipo + "', IdDiagnostico ='" + IdDiagnostico + "', IdEstado ='" + IdEstado + "', IdUsuario ='" + IdUsuario + "', Serial ='" + Serial + "', Observaciones ='" + Observaciones + "where IdRececiones =" + IdRecepciones);
+            Conexion conexiondb = new Conexion();
+            return conexiondb.EjecutarDB("Update Recepciones set IdCliente ='" + IdCliente + "', IdEquipo ='" + IdEquipo + "', IdDiagnostico ='" + IdDiagnostico + "', IdEstado ='" + IdEstado + "', IdUsuario ='" + IdUsuario + "', Serial ='" + Serial + "', Observaciones ='" + Observaciones + " where IdRecepciones =" + IdRecepciones);
         }
 
         public bool Buscar()
@@ -73,7 +75,7 @@ namespace BLL
                 retorno = true;
                 Fecha = (DateTime)dt.Rows[0]["Fecha"];
                 IdCliente = (int)dt.Rows[0]["IdCliente"];
-                IdEquipo = (int)dt.Rows[0]["IdArticulo"];
+                IdEquipo = (int)dt.Rows[0]["IdEquipo"];
                 IdDiagnostico = (int)dt.Rows[0]["IdDiagnostico"];
                 IdEstado = (int)dt.Rows[0]["IdEstado"];
                 IdUsuario = (int)dt.Rows[0]["IdUsuario"];

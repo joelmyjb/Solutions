@@ -20,6 +20,17 @@
         .auto-style8 {
             width: 112px;
         }
+        .auto-style9 {
+            height: 56px;
+        }
+        .auto-style10 {
+            width: 112px;
+            height: 56px;
+        }
+        .auto-style11 {
+            width: 248px;
+            height: 56px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -28,17 +39,17 @@
             <td class="auto-style1" colspan="4">&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style7">
+            <td class="auto-style9">
                 <asp:Label ID="IdLabel" runat="server" Text="IdCompra"></asp:Label>
             </td>
-            <td class="auto-style2">
+            <td class="auto-style9">
                 <asp:TextBox ID="IdCompraTextBox" runat="server" Height="16px" Width="34px"></asp:TextBox>
             </td>
-            <td class="auto-style8">
+            <td class="auto-style10">
                 <asp:Label ID="IdArticuloLabel" runat="server" Text="IdArticulo"></asp:Label>
             </td>
-            <td class="auto-style4">
-                <asp:DropDownList ID="ArticuloDropDownList" runat="server" Width="179px">
+            <td class="auto-style11">
+                <asp:DropDownList ID="DropDownList1" runat="server" Height="36px" Width="179px">
                 </asp:DropDownList>
             </td>
         </tr>

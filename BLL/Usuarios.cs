@@ -40,6 +40,12 @@ namespace BLL
             return accion;
         }
 
+        public bool Modificar()
+        {
+            Conexion conexiondb = new Conexion();
+            return conexiondb.EjecutarDB("Update Usuarios set Nombre= '" + Nombre + "', Clave= '" + Clave + "', ConfirmarClave= '" + ConfirmarClave + "' where IdUsuario = " + IdUsuario);
+        }
+
         public bool Eliminar(int IdUsuario)
         {
             Conexion conexiondb = new Conexion();
@@ -48,7 +54,7 @@ namespace BLL
             return accion;
         }
 
-        public bool Buscar(int IdUsuario)
+        public bool Buscar()
         {
             bool Retorno = false;
             DataTable Datos = new DataTable();
@@ -75,7 +81,7 @@ namespace BLL
 
             if (IdUsuario != null)
             {
-                retorno = this.Buscar((int)IdUsuario);
+                retorno = this.Buscar();
             }
 
             return retorno;

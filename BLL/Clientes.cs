@@ -53,7 +53,7 @@ namespace BLL
         public bool Modificar()
         {
             Conexion conexiondb = new Conexion();
-            return conexiondb.EjecutarDB("Update from Clientes set Nombres = '" + Nombres + "', Telefono ='" + Telefono + "', Celular ='" + Celular + "', Direccion ='" + Direccion + "' , Email ='" + Email + "' where Clientes= " + IdCliente);
+            return conexiondb.EjecutarDB("Update Clientes set Nombres = '" + Nombres + "', Telefono ='" + Telefono + "', Celular ='" + Celular + "', Direccion ='" + Direccion + "' , Email ='" + Email + "' where IdCliente= " + IdCliente);
         }
 
         public bool Buscar()

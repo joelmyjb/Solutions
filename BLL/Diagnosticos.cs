@@ -42,7 +42,7 @@ namespace BLL
         public bool Modificar()
         {
             Conexion conexiondb = new Conexion();
-            return conexiondb.EjecutarDB("Update from Diagnosticos set Descripcion = '" + Descripcion + "' where Diagnosticos = " + IdDiagnostico);
+            return conexiondb.EjecutarDB("Update Diagnosticos set Descripcion = '" + Descripcion + "' where IdDiagnostico = " + IdDiagnostico);
         }
 
         public bool Buscar()

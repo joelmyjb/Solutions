@@ -16,25 +16,25 @@ namespace ProyectoFinalAII.Registros
         {
             if (!IsPostBack)
             {
-                if (User.Identity.IsAuthenticated)
+                if (Request.QueryString["IdArticulo"] != null)
                 {
-                    Articulos articulos = new Articulos();
-                    if (Request.QueryString["IdArticulo"] != null)
+                    EliminarButton.Visible = true;
+                    articulos.IdArticulo = int.Parse(Request.QueryString["IdArticulo"]);
+                    if (articulos.Buscar())
                     {
-                        articulos.IdArticulo = int.Parse(Request.QueryString["IdArticulo"]);
-                        if (articulos.Buscar())
-                        {
-                            DescripcionTextBox.Text = articulos.Descripcion;
-                            TipoDropDown.Text = articulos.Tipo;
-                            ExistenciaTextBox.Text = articulos.Existencia.ToString();
-                            CostoTextBox.Text = articulos.Costo.ToString();
-                            PrecioTextBox.Text = articulos.Precio.ToString();
-                            this.LLenarClase(articulos);
-                        }
+                        IdArticuloTextBox.Text = articulos.IdArticulo.ToString();
+                        DescripcionTextBox.Text = articulos.Descripcion;
+                        TipoDropDown.Text = articulos.Tipo;
+                        ExistenciaTextBox.Text = articulos.Existencia.ToString();
+                        CostoTextBox.Text = articulos.Costo.ToString();
+                        PrecioTextBox.Text = articulos.Precio.ToString();
+                        
 
 
                     }
+
                 }
+
             }
         }
 
@@ -97,7 +97,7 @@ namespace ProyectoFinalAII.Registros
             {
                 articulos.IdArticulo = int.Parse(Request.QueryString["IdArticulo"]);
                 articulos.Modificar();
-                MensajeLabel.Text = "El registro se ha Modificado Correctamente";
+                MensajeLabel.Text = "El articulo se ha Modificado Correctamente";
             }
             
             else

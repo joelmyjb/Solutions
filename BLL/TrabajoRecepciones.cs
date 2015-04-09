@@ -23,7 +23,7 @@ namespace BLL
 
         public TrabajoRecepciones(int IdTrabajoRecepciones, int IdRecepcion, int IdArticulo, int IdTecnico, int IdUsuario, double Precio, double Costo, bool esPago)
         {
-       
+
             this.Precio = Precio;
             this.Costo = Costo;
 
@@ -46,20 +46,22 @@ namespace BLL
             Conexion conexiondb = new Conexion();
             return conexiondb.EjecutarDB("Insert Into TrabajoRecepciones(IdRecepcion, IdArticulo, IdTecnico, IdUsuario, Precio, Costo, esPago)Values('" + this.IdRecepcion +
                 "','" + this.IdArticulo + "','" + this.IdTecnico + "','" + this.IdUsuario + "', '" + this.Precio + "','" + this.Costo + "', '" + this.esPago + "')");
-      
+
         }
         public bool Eliminar(int IdTrabajoRecepciones)
         {
-            return conexiondb.EjecuctarDB("Delete from TrabajoRecepciones where IdTrabajoRececpciones =" + IdTrabajoRecepciones);
+            Conexion conexiondb = new Conexion();
+            return conexiondb.EjecutarDB("Delete from TrabajoRecepciones where IdTrabajoRececpciones =" + IdTrabajoRecepciones);
         }
         public bool Modificar()
         {
-            return conexiondb.EjecuctarDB("Update TrabajoRecepciones set IdRecepcion= '" + IdRecepcion + "', IdArticulo= '" + IdArticulo + "', IdTecnico= '" + IdTecnico + "', IdUsuario= '" + IdUsuario + "', Precio= '" + Precio + "', Costo= '" + Costo + "' where IdTrabajoRecepciones = " + IdTrabajoRecepciones);
+            Conexion conexiondb = new Conexion();
+            return conexiondb.EjecutarDB("Update TrabajoRecepciones set IdRecepcion= '" + IdRecepcion + "', IdArticulo= '" + IdArticulo + "', IdTecnico= '" + IdTecnico + "', IdUsuario= '" + IdUsuario + "', Precio= '" + Precio + "', Costo= '" + Costo + "' where IdTrabajoRecepciones = " + IdTrabajoRecepciones);
         }
-        public bool Bucar()
+        public bool Buscar()
         {
             bool retorno = false;
-            dt = conexiondb.BuscarDb("Select * from TrabajoRecepciones where IdTrabajoRecpeciones = " + IdTrabajoRecepciones);
+            dt = conexiondb.BuscarDb("Select * from TrabajoRecepciones where IdTrabajoRecepciones = " + IdTrabajoRecepciones);
             if (dt.Rows.Count > 0)
             {
                 retorno = true;
@@ -67,8 +69,8 @@ namespace BLL
                 IdArticulo = (int)dt.Rows[0]["IdArticulo"];
                 IdTecnico = (int)dt.Rows[0]["IdTecnico"];
                 IdUsuario = (int)dt.Rows[0]["IdUsuario"];
-                Precio = (float)dt.Rows[0]["Precio"];
-                Costo = (float)dt.Rows[0]["Costo"];
+                Precio = (double)dt.Rows[0]["Precio"];
+                Costo = (double)dt.Rows[0]["Costo"];
                 esPago = (bool)dt.Rows[0]["esPago"];
             }
             return retorno;

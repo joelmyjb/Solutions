@@ -45,13 +45,19 @@ namespace BLL
                 "','" + this.IdTecnico + "','" + this.IdUsuario + "','" + this.FechaCorte.ToString("MM/dd/yyyy HH:mm:ss") + "', '" + this.Monto + "')");
         }
 
+        public bool Modificar()
+        {
+            Conexion conexiondb = new Conexion();
+            return conexiondb.EjecutarDB("Update PagoTecnico set Fecha = '" + Fecha + "', IdTecnico = '" + IdTecnico +"', IdUsuario = '" + IdUsuario + "', FechaCorte = '" + FechaCorte + "', Monto = '" + Monto + "' where IdPagoTecnico = " + IdPagoTecnico);
+        }
+
         public bool Eliminar(int IdPagoTecnico)
         {
             Conexion conexiondb = new Conexion();
             return conexiondb.EjecutarDB("Delete from PagoTecnico where IdPagoTecnico = " + IdPagoTecnico.ToString());
         }
 
-        public bool Buscar(int IdPagoTecnico)
+        public bool Buscar()
         {
             Conexion conexiondb = new Conexion();
             bool mensaje = false;

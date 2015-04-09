@@ -25,7 +25,7 @@ namespace ProyectoFinalAII.Consultas
         
         Clientes clientes = new Clientes();
         string Filtro = "1=1";
-        string Campos = "IdCliente,Nombres, Telefono ";
+        string Campos = "IdCliente,Nombres, Telefono, Celular, Direccion ";
 
         protected void BuscarButton_Click1(object sender, EventArgs e)
         {
@@ -39,7 +39,7 @@ namespace ProyectoFinalAII.Consultas
             else
                 if (BuscarDropDownList.SelectedIndex == 1)
                 {
-                    Filtro += " and Nombres like '%" + BuscarText.Text + "%'";
+                    Filtro += " and Nombres like '%" + BuscarText.Text + "'";
                 }
              
 

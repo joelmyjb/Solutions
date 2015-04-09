@@ -36,7 +36,7 @@ namespace ProyectoFinalAII.Consultas
             else
                 if (BuscarDropDownList.SelectedIndex == 1)
                 {
-                    Filtro += " and Descripcion like '%" + BuscarText.Text + "%'";
+                    Filtro += " and Descripcion like '%" + BuscarText.Text + "'";
                 }
 
 

@@ -49,13 +49,13 @@ namespace BLL
         public bool Eliminar(int IdEntrega)
         {
             Conexion conexiondb = new Conexion();
-            return conexiondb.EjecutarDB("Delete from Entregas where IdEntrega = " + IdEntrega.ToString());
+            return conexiondb.EjecutarDB("Delete from Entregas where IdEntrega = " + IdEntrega);
         }
 
         public bool Modificar()
         {
             Conexion conexiondb = new Conexion();
-            return conexiondb.EjecutarDB("Update from Entregas set Fecha = '" + Fecha + "', IdRecepcion ='" + IdRecepcion + "', IdUsuario ='" + IdUsuario + "', Monto = '" + Monto + "', Descuento = '" + Descuento + "' where Entregas = " + IdEntrega);
+            return conexiondb.EjecutarDB("Update Entregas set  IdRecepcion ='" + IdRecepcion + "', IdUsuario ='" + IdUsuario + "', Monto = '" + Monto + "', Descuento = '" + Descuento + "' where IdEntrega = " + IdEntrega);
         }
 
         public bool Buscar()
@@ -82,7 +82,7 @@ namespace BLL
         {
 
             Conexion conexiondb = new Conexion();
-            return conexiondb.BuscarDb("Select " + Campos + " from Entregas where" + Filtro);
+            return conexiondb.BuscarDb("Select " + Campos + " from Entregas where " + Filtro);
 
         }
     }

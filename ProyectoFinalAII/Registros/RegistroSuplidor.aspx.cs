@@ -12,21 +12,23 @@ namespace ProyectoFinalAII.Registros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Suplidor suplidor = new Suplidor();
             if (!IsPostBack)
             {
                 if (Request.QueryString["IdSuplidor"] != null)
                 {
-                    Suplidor suplidor = new Suplidor();
                     EliminarButton.Visible = true;
                     suplidor.IdSuplidor = int.Parse(Request.QueryString["IdSuplidor"]);
                     if (suplidor.Buscar())
                     {
+                        IdSuplidorTextBox.Text = suplidor.IdSuplidor.ToString();
                         NombresTextBox.Text = suplidor.Nombres;
                      
 
                     }
 
                 }
+
             }
 
         }
@@ -39,12 +41,8 @@ namespace ProyectoFinalAII.Registros
             if (Request.QueryString["IdSuplidor"] != null)
             {
                 suplidor.IdSuplidor = int.Parse(Request.QueryString["IdSuplidor"]);
-                if (suplidor.Modificar())
-                {
-                    Response.Write("Se ha modificado!!");
-                    LimpiarCampos();
-                }
-
+                suplidor.Modificar();
+                MensajeLabel.Text = "El suplidor se ha Modificado Correctamente";
             }
             else
             if(suplidor.Insertar())

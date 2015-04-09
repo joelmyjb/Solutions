@@ -12,25 +12,27 @@ namespace ProyectoFinalAII.Registros
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Tecnicos tecnicos = new Tecnicos();
             if (!IsPostBack)
             {
                 if (Request.QueryString["IdTecnicos"] != null)
                 {
-                    Tecnicos tecnicos = new Tecnicos();
                     EliminarButton.Visible = true;
                     tecnicos.IdTecnicos = int.Parse(Request.QueryString["IdTecnicos"]);
                     if (tecnicos.Buscar())
                     {
+                        IdClienteTextBox.Text = tecnicos.IdTecnicos.ToString();
                         NombresTextBox.Text = tecnicos.Nombres;
                         DireccionTextBox.Text = tecnicos.Direccion;
-                        TelefonoTextBox.Text = tecnicos.Telefono;
-                        EmailTextBox.Text = tecnicos.Email;
                         PctComisionTextBox.Text = tecnicos.PctComision.ToString();
+                        EmailTextBox.Text = tecnicos.Email;
+                        TelefonoTextBox.Text = tecnicos.Telefono;
 
 
                     }
 
                 }
+
             }
         }
 
@@ -82,15 +84,12 @@ namespace ProyectoFinalAII.Registros
         {
             Tecnicos tecnicos = new Tecnicos();
             this.LLenarClase(tecnicos);
+
             if (Request.QueryString["IdTecnicos"] != null)
             {
                 tecnicos.IdTecnicos = int.Parse(Request.QueryString["IdTecnicos"]);
-                if (tecnicos.Modificar())
-                {
-                    Response.Write("Se ha modificado!!");
-                    LimpiarCampos();
-                }
-
+                tecnicos.Modificar();
+                MensajeLabel.Text = "El tecnico se ha Modificado Correctamente";
             }
             else
             if(tecnicos.Insertar())

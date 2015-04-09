@@ -83,8 +83,7 @@
                 <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" OnClick="EliminarButton_Click" />
             &nbsp;&nbsp;&nbsp;&nbsp; <asp:Button ID="GuardarButton" runat="server" Text="Guardar" OnClick="GuardarButton_Click" />
             &nbsp;&nbsp;&nbsp;
-                <asp:Button ID="ModificarButton" runat="server" OnClick="ModificarButton_Click" Text="Modificar" />
-            </td>
+                </td>
         </tr>
     </table>
 </asp:Content>

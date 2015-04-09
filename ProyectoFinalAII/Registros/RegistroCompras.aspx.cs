@@ -18,10 +18,10 @@ namespace ProyectoFinalAII.Registros
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.ArticuloDropDownList.DataSource = articulos.Lista("IdArticulo,Descripcion", "1=1");
-            this.ArticuloDropDownList.DataValueField = "IdArticulo";
-            this.ArticuloDropDownList.DataTextField = "Descripcion";
-            this.ArticuloDropDownList.DataBind();
+            this.DropDownList1.DataSource = articulos.Lista("IdArticulo,Descripcion", "1=1");
+            this.DropDownList1.DataValueField = "IdArticulo";
+            this.DropDownList1.DataTextField = "Descripcion";
+            this.DropDownList1.DataBind();
 
             this.UsuarioDropDownList.DataSource = usuarios.Lista("IdUsuario, Nombre", "1=1");
             this.UsuarioDropDownList.DataValueField = "IdUsuario";
@@ -57,7 +57,7 @@ namespace ProyectoFinalAII.Registros
         {
             Compras comp = new Compras();
             // comprasDetalle.IdCompra = Convert.ToInt32(IdCompraTextBox.Text);
-            comprasDetalle.IdArticulo = Convert.ToInt32(ArticuloDropDownList.Text);
+            comprasDetalle.IdArticulo = Convert.ToInt32(DropDownList1.Text);
             comprasDetalle.Cantidad = Convert.ToInt32(CantidadTextBox.Text.ToString());
             comp.Fecha = Convert.ToDateTime(FechaTextBox.Text);
             comprasDetalle.Costo = Convert.ToInt32(CostoTextBox.Text.ToString());
@@ -68,7 +68,7 @@ namespace ProyectoFinalAII.Registros
         private void LlenarCampos(ComprasDetalle comprasDetalle, Compras comp)
         {
 
-            ArticuloDropDownList.Text = comprasDetalle.IdArticulo.ToString();
+            DropDownList1.Text = comprasDetalle.IdArticulo.ToString();
             IdCompraTextBox.Text = comprasDetalle.IdCompra.ToString();
             UsuarioDropDownList.Text = comp.IdUsuario.ToString();
 
@@ -127,7 +127,8 @@ namespace ProyectoFinalAII.Registros
 
             DataRow row = datos.NewRow();
             row["IdArticulo"] = Request.QueryString["add"];
-            row["Descripcion"] = articulos.Descripcion;
+
+            row["Descripcion"] = DropDownList1.Text;
             row["Cantidad"] = CantidadTextBox.Text;
             row["Costo"] = CostoTextBox.Text;
             row["Total"] = (int.Parse(CantidadTextBox.Text) * int.Parse(CostoTextBox.Text));
@@ -186,10 +187,11 @@ namespace ProyectoFinalAII.Registros
 
             Articulos articulos = new Articulos();
             DataRow row = datos.NewRow();
-            row["IdArticulo"] = ArticuloDropDownList.Text;
-            row["Descripcion"] = articulos.Descripcion;
+            row["IdArticulo"] = DropDownList1.SelectedItem.Value;
+            row["Descripcion"] = DropDownList1.SelectedItem.Text;
             row["Cantidad"] = CantidadTextBox.Text;
             row["Costo"] = CostoTextBox.Text;
+            
             row["Total"] = (int.Parse(CantidadTextBox.Text) * int.Parse(CostoTextBox.Text));
             datos.Rows.Add(row);
 
