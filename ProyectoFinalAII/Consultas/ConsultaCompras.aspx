@@ -9,7 +9,7 @@
                 </asp:DropDownList>
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:TextBox ID="BuscarText" runat="server" Width="225px"></asp:TextBox>
-                &nbsp;
+                &nbsp;a
                 <asp:Button ID="BuscarButton" runat="server" OnClick="BuscarButton_Click1" Text="Buscar" />
             </td>
         </tr>
