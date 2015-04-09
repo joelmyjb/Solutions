@@ -19,7 +19,7 @@
             <td colspan="2">
                 <asp:GridView ID="ConsultaGridView" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="622px">
                     <Columns>
-                        <asp:HyperLinkField DataNavigateUrlFields="IdDiagnostico" DataNavigateUrlFormatString="/Registros/RegistroDiagnosticos.aspx?IdDiagnosticos={0}" Text="Editar" />
+                        <asp:HyperLinkField DataNavigateUrlFields="IdDiagnostico" DataNavigateUrlFormatString=":Registros/RegistroDiagnosticos.aspx?IdDiagnosticos={0}" Text="Editar" />
                     </Columns>
                     <FooterStyle BackColor="White" ForeColor="#000066" />
                     <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
