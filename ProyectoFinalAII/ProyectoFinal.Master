@@ -1,0 +1,128 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ProyectoFinal.master.cs" Inherits="ProyectoFinalAII.ProyectoFinal" %>
+
+<!--
+spigot, a free CSS web template by ZyPOP (zypopwebtemplates.com/)
+
+Download: http://zypopwebtemplates.com/
+
+License: Creative Commons Attribution
+//-->
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="/Css/styles.css" rel="stylesheet" />
+    <link href="Css/Menu.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1>
+
+                <a href="/"> J&M <span> Solutions </span></a></h1>
+            
+
+
+        </header>
+        <%-- <nav>
+            MENU
+            <ul>
+                <li class="start"><a href="index.html">Inicio</a></li>
+                <li class="selected"><a href="examples.html">Registro</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Soluciones</a></li>
+                <li class="end"><a href="#">Contacto</a></li>
+            </ul>
+        </nav>--%>
+        <nav>
+            <ul class="menu">
+                <li><a href="#"><i class="icon-home"></i>Inicio</a>
+                    <%--<ul class="sub-menu">
+                        <li><a href="#">Sub-Menu 1</a></li>
+                        <li><a href="#">Sub-Menu 2</a></li>
+                        <li><a href="#">Sub-Menu 3</a></li>
+                    </ul>--%>
+                </li>
+                <li><a href="#"><i class="icon-camera"></i>Registros </a>
+                    <ul class="sub-menu">
+                        <li><a href="RegistroArticulos.aspx">Registro Articulos</a></li>
+                        <li><a href="RegistroClientes.aspx">Registro Clientes</a></li>
+                        <li><a href="RegistroDiagnosticos.aspx">Registro Diagnosticos</a></li>
+                        <li><a href="RegistroEntregas.aspx">Registro Entregas</a></li>
+                        <li><a href="RegistroEstados.aspx">Registro Estados</a></li>
+                        <li><a href="RegistroPagoTecnico.aspx">Registro Pagos a Tecnicos</a></li>
+                        <li><a href="RegistroRecepciones.aspx">Registro Recepciones</a></li>
+                        <li><a href="RegistroSuplidor.aspx">Registro Suplidor</a></li>
+                        <li><a href="RegistroTecnicos.aspx">Registro Tecnicos</a></li>
+
+                       
+                        
+                    </ul>
+                </li>
+
+                <li><a href="#"><i class="icon-camera"></i>Consultas</a>
+                    <ul class="sub-menu">
+                       <li><a href=" ConsultaArticulos.aspx">Consulta Articulos</a></li>
+
+                       <li><a href="ConsultaClientes.aspx">Consulta Clientes</a></li>
+                        <li><a href="ConsultaDiagnosticos.aspx">Consulta Diagnosticos</a></li>
+                        <li><a href="ConsultaEntregas.aspx">Consulta Entregas</a></li>
+                        <li><a href="ConsultaEstados.aspx">Consulta Estados</a></li>
+                        <li><a href="ConsultaPagoTecnico">Consulta Pagos Tecnicos</a></li>
+                        <li><a href="ConsultaRecepciones.aspx">Consulta Recepciones</a></li>
+                        <li><a href="ConsultaSuplidor.aspx">Consulta Suplidor</a></li>
+                        <li><a href="ConsultaTecnicos.aspx">Consulta Tecnicos</a></li>
+                         <li><a href="ConsultaTiposEquipos.aspx">Consulta Tipos Equipos</a></li>
+                         <li><a href="ConsultaTrabajoRecepciones.aspx">Consulta Trabajo Recepciones</a></li>
+                         <li><a href="ConsultaUsuarios.aspx">Consulta Usuarios</a></li>
+
+
+
+                        
+                    </ul>
+                </li>
+                <li><a href="#"><i class="icon-envelope-alt"></i>Contactanos</a></li>
+            </ul>
+        </nav>
+
+        <div id="body">
+            <%--CUERPO DE LA MASTER PAGE--%>
+            <section id="content">
+
+                <article>
+                    <form id="form1" runat="server">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                    </form>
+                </article>
+
+
+            </section>
+
+            
+
+                    
+
+                </ul>
+
+            </aside>
+            <div class="clear"></div>
+        </div>
+        <%--FIN CUERPO DE LA MASTER PAGE--%>
+
+        <footer>
+
+            <div class="footer-content">
+                <p>&copy; YourSite 2010. <a href="http://zypopwebtemplates.com/">Free CSS Web Templates</a> by ZyPOP</p>
+            </div>
+            <div class="footer-bottom"></div>
+        </footer>
+    </div>
+    <%--container--%>
+</body>
+</html>
