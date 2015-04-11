@@ -76,6 +76,7 @@ namespace ProyectoFinalAII.Registros
            {
                MensajeLabel.ForeColor = System.Drawing.Color.Green;
                MensajeLabel.Text = "El cliente se elimino..";
+               Response.Redirect("Consultas/ConsultaClientes.aspx");
                LimpiarCampos();
                   
            }

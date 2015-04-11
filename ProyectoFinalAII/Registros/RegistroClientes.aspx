@@ -13,10 +13,10 @@
         </tr>
         <tr>
             <td class="auto-style4">
-                <asp:Label ID="IdLabel" runat="server" Text="IdCliente"></asp:Label>
+                <asp:Label ID="IdLabel" runat="server" Text="IdCliente" Visible="False"></asp:Label>
             </td>
             <td class="auto-style1">
-                <asp:TextBox ID="IdClienteTextBox" runat="server" BackColor="White" Width="56px"></asp:TextBox>
+                <asp:TextBox ID="IdClienteTextBox" runat="server" BackColor="White" Width="56px" ReadOnly="True" Visible="False" ></asp:TextBox>
             </td>
         </tr>
         <tr>

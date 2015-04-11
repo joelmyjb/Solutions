@@ -44,6 +44,20 @@ License: Creative Commons Attribution
             <ul class="menu">
                 <li><a href="#"><i class="icon-home"></i>Inicio</a>
                     <%--<ul class="sub-menu">
+
+                        <ul>
+                    <li>
+                        <h4>Registros</h4>
+                        <ul>
+                            <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Registros/rClientes.aspx">Clientes</asp:HyperLink></li>
+                            <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Registros/rOfertas.aspx">Ofertas</asp:HyperLink></li>
+                            <li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Registros/rProductos.aspx">Productos</asp:HyperLink></li>
+                            <li><asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Registros/rRutas.aspx">Rutas</asp:HyperLink></li>
+                            <li><asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Registros/rUsuarios.aspx">Usuarios</asp:HyperLink></li>
+                            <li><asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Registros/rVentas.aspx">Ventas</asp:HyperLink></li>
+
+                        </ul>
+
                         <li><a href="#">Sub-Menu 1</a></li>
                         <li><a href="#">Sub-Menu 2</a></li>
                         <li><a href="#">Sub-Menu 3</a></li>
@@ -51,15 +65,33 @@ License: Creative Commons Attribution
                 </li>
                 <li><a href="#"><i class="icon-camera"></i>Registros </a>
                     <ul class="sub-menu">
-                        <li><a href="RegistroArticulos.aspx">Registro Articulos</a></li>
-                        <li><a href="RegistroClientes.aspx">Registro Clientes</a></li>
-                        <li><a href="RegistroDiagnosticos.aspx">Registro Diagnosticos</a></li>
-                        <li><a href="RegistroEntregas.aspx">Registro Entregas</a></li>
-                        <li><a href="RegistroEstados.aspx">Registro Estados</a></li>
-                        <li><a href="RegistroPagoTecnico.aspx">Registro Pagos a Tecnicos</a></li>
-                        <li><a href="RegistroRecepciones.aspx">Registro Recepciones</a></li>
-                        <li><a href="RegistroSuplidor.aspx">Registro Suplidor</a></li>
-                        <li><a href="RegistroTecnicos.aspx">Registro Tecnicos</a></li>
+
+                        <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Registros/RegistroArticulos.aspx">Articulos</asp:HyperLink></li>
+                        <%--<li><a href="RegistroArticulos.aspx">Registro Articulos</a></li>--%>
+
+                        <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Registros/RegistroClientes.aspx">Clientes</asp:HyperLink></li>
+                        <%--<li><a href="RegistroClientes.aspx">Registro Clientes</a></li>--%>
+
+                         <li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Registros/RegistroDiagnosticos.aspx">Diagnosticos</asp:HyperLink></li>
+                        <%--<li><a href="RegistroDiagnosticos.aspx">Registro Diagnosticos</a></li>--%>
+
+                         <li><asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Registros/RegistroEntregas.aspx">Entregas</asp:HyperLink></li>
+                        <%--<li><a href="RegistroEntregas.aspx">Registro Entregas</a></li>--%>
+
+                         <li><asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Registros/RegistroEstados.aspx">Estados</asp:HyperLink></li>
+                        <%--<li><a href="RegistroEstados.aspx">Registro Estados</a></li>--%>
+
+                         <li><asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Registros/RegistroPagoTecnico.aspx">Pagos a Tecnicos</asp:HyperLink></li>
+                        <%--<li><a href="RegistroPagoTecnico.aspx">Registro Pagos a Tecnicos</a></li>--%>
+
+                         <li><asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Registros/RegistroRecepciones.aspx">Recepciones</asp:HyperLink></li>
+                        <%--<li><a href="RegistroRecepciones.aspx">Registro Recepciones</a></li>--%>
+
+                         <li><asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/Registros/RegistroSuplidor.aspx">Suplidor</asp:HyperLink></li>
+                        <%--<li><a href="RegistroSuplidor.aspx">Registro Suplidor</a></li>--%>
+
+                         <li><asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="~/Registros/RegistroTecnicos.aspx">Tecnicos</asp:HyperLink></li>
+                        <%--<li><a href="RegistroTecnicos.aspx">Registro Tecnicos</a></li>--%>
 
                        
                         
@@ -68,19 +100,42 @@ License: Creative Commons Attribution
 
                 <li><a href="#"><i class="icon-camera"></i>Consultas</a>
                     <ul class="sub-menu">
-                       <li><a href=" ConsultaArticulos.aspx">Consulta Articulos</a></li>
 
-                       <li><a href="ConsultaClientes.aspx">Consulta Clientes</a></li>
-                        <li><a href="ConsultaDiagnosticos.aspx">Consulta Diagnosticos</a></li>
-                        <li><a href="ConsultaEntregas.aspx">Consulta Entregas</a></li>
-                        <li><a href="ConsultaEstados.aspx">Consulta Estados</a></li>
-                        <li><a href="ConsultaPagoTecnico.aspx">Consulta Pagos Tecnicos</a></li>
-                        <li><a href="ConsultaRecepciones.aspx">Consulta Recepciones</a></li>
-                        <li><a href="ConsultaSuplidor.aspx">Consulta Suplidor</a></li>
-                        <li><a href="ConsultaTecnicos.aspx">Consulta Tecnicos</a></li>
-                         <li><a href="ConsultaTiposEquipos.aspx">Consulta Tipos Equipos</a></li>
-                         <li><a href="ConsultaTrabajoRecepciones.aspx">Consulta Trabajo Recepciones</a></li>
-                         <li><a href="ConsultaUsuarios.aspx">Consulta Usuarios</a></li>
+                        <li><asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/Consultas/ConsultaArticulos.aspx">Articulos</asp:HyperLink></li>
+                      <%-- <li><a href=" ConsultaArticulos.aspx">Consulta Articulos</a></li>--%>
+
+                        <li><asp:HyperLink ID="HyperLink11" runat="server" NavigateUrl="~/Consultas/ConsultaClientes.aspx">Clientes</asp:HyperLink></li>
+                       <%--<li><a href="ConsultaClientes.aspx">Consulta Clientes</a></li>--%>
+
+                        <li><asp:HyperLink ID="HyperLink12" runat="server" NavigateUrl="~/Consultas/ConsultaDiagnosticos.aspx">Diagnosticos</asp:HyperLink></li>
+                        <%--<li><a href="ConsultaDiagnosticos.aspx">Consulta Diagnosticos</a></li>--%>
+
+                        <li><asp:HyperLink ID="HyperLink13" runat="server" NavigateUrl="~/Consultas/ConsultaEntregas.aspx">Entregas</asp:HyperLink></li>
+                        <%--<li><a href="ConsultaEntregas.aspx">Consulta Entregas</a></li>--%>
+
+                        <li><asp:HyperLink ID="HyperLink14" runat="server" NavigateUrl="~/Consultas/ConsultaEstados.aspx">Estados</asp:HyperLink></li>
+                        <%--<li><a href="ConsultaEstados.aspx">Consulta Estados</a></li>--%>
+
+                        <li><asp:HyperLink ID="HyperLink15" runat="server" NavigateUrl="~/Consultas/ConsultaPagoTecnico.aspx">Pagos tecnicos</asp:HyperLink></li>
+                       <%-- <li><a href="ConsultaPagoTecnico.aspx">Consulta Pagos Tecnicos</a></li>--%>
+
+                        <li><asp:HyperLink ID="HyperLink16" runat="server" NavigateUrl="~/Consultas/ConsultaRecepciones.aspx">Recepciones</asp:HyperLink></li>
+                        <%--<li><a href="ConsultaRecepciones.aspx">Consulta Recepciones</a></li>--%>
+
+                        <li><asp:HyperLink ID="HyperLink17" runat="server" NavigateUrl="~/Consultas/ConsultaSuplidor.aspx">Suplidor</asp:HyperLink></li>
+                       <%-- <li><a href="ConsultaSuplidor.aspx">Consulta Suplidor</a></li>--%>
+
+                        <li><asp:HyperLink ID="HyperLink18" runat="server" NavigateUrl="~/Consultas/ConsultaTecnicos.aspx">Tecnicos</asp:HyperLink></li>
+                      <%--  <li><a href="ConsultaTecnicos.aspx">Consulta Tecnicos</a></li>--%>
+
+                        <li><asp:HyperLink ID="HyperLink19" runat="server" NavigateUrl="~/Consultas/ConsultaTiposEquipos.aspx">Equipos</asp:HyperLink></li>
+                         <%--<li><a href="ConsultaTiposEquipos.aspx">Consulta Tipos Equipos</a></li>--%>
+
+                        <li><asp:HyperLink ID="HyperLink20" runat="server" NavigateUrl="~/Consultas/ConsultaTrabajoRecepciones.aspx">Trabajo de Recepciones</asp:HyperLink></li>
+                         <%--<li><a href="ConsultaTrabajoRecepciones.aspx">Consulta Trabajo Recepciones</a></li>--%>
+
+                        <li><asp:HyperLink ID="HyperLink21" runat="server" NavigateUrl="~/Consultas/ConsultaUsuarios.aspx">Usuarios</asp:HyperLink></li>
+                        <%-- <li><a href="ConsultaUsuarios.aspx">Consulta Usuarios</a></li>--%>
 
 
 
