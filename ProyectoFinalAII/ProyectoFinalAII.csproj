@@ -61,6 +61,7 @@
     <Content Include="App_Data\ProyectoFinalDB_log.ldf">
       <DependentUpon>ProyectoFinalDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Consultas\Conctactanos.aspx" />
     <Content Include="Consultas\ConsultaArticulos.aspx" />
     <Content Include="Consultas\ConsultaClientes.aspx" />
     <Content Include="Consultas\ConsultaCompras.aspx" />
@@ -92,6 +93,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\Conctactanos.aspx.cs">
+      <DependentUpon>Conctactanos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\Conctactanos.aspx.designer.cs">
+      <DependentUpon>Conctactanos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\ConsultaArticulos.aspx.cs">
       <DependentUpon>ConsultaArticulos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

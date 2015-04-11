@@ -142,7 +142,8 @@ License: Creative Commons Attribution
                         
                     </ul>
                 </li>
-                <li><a href="#"><i class="icon-envelope-alt"></i>Contactanos</a></li>
+                <li><asp:HyperLink ID="HyperLink22" runat="server" NavigateUrl="~/Consultas/Conctactanos.aspx">Contactanos</asp:HyperLink></li>
+                <%--<li><a href="Conctactanos.aspx"><i class="icon-envelope-alt"></i>Contactanos</a></li>--%>
             </ul>
         </nav>
 
