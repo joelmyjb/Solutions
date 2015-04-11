@@ -19,10 +19,10 @@
         </tr>
         <tr>
             <td class="auto-style2">
-                <asp:Label ID="IdArticuloLabel" runat="server" Text="IdArticulo"></asp:Label>
+                <asp:Label ID="IdArticuloLabel" runat="server" Text="IdArticulo" Visible="False"></asp:Label>
             </td>
             <td class="auto-style3">
-                <asp:TextBox ID="IdArticuloTextBox" runat="server" Height="16px" Width="34px"></asp:TextBox>
+                <asp:TextBox ID="IdArticuloTextBox" runat="server" Height="16px" Width="34px" ReadOnly="True" Visible="False"></asp:TextBox>
             </td>
         </tr>
         <tr>

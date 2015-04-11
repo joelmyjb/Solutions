@@ -40,10 +40,10 @@
         </tr>
         <tr>
             <td class="auto-style9">
-                <asp:Label ID="IdLabel" runat="server" Text="IdCompra"></asp:Label>
+                <asp:Label ID="IdLabel" runat="server" Text="IdCompra" Visible="False"></asp:Label>
             </td>
             <td class="auto-style9">
-                <asp:TextBox ID="IdCompraTextBox" runat="server" Height="16px" Width="34px"></asp:TextBox>
+                <asp:TextBox ID="IdCompraTextBox" runat="server" Height="16px" Width="34px" Visible="False"></asp:TextBox>
             </td>
             <td class="auto-style10">
                 <asp:Label ID="IdArticuloLabel" runat="server" Text="IdArticulo"></asp:Label>

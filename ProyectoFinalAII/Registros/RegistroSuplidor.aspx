@@ -14,10 +14,10 @@
         </tr>
         <tr>
             <td class="auto-style1">
-                <asp:Label ID="IdSuplidorLabel" runat="server" Text="IdSuplidor"></asp:Label>
+                <asp:Label ID="IdSuplidorLabel" runat="server" Text="IdSuplidor" Visible="False"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="IdSuplidorTextBox" runat="server" Width="39px"></asp:TextBox>
+                <asp:TextBox ID="IdSuplidorTextBox" runat="server" Width="39px" Visible="False"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
         </tr>
